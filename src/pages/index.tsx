@@ -1,11 +1,12 @@
 import { Link } from 'gatsby';
 import React from 'react';
 import Header from '../components/header';
-
-// import Layout from '../components/layout';
+import Layout from '../components/layout';
 
 const IndexPage = () => (
-  <Header title="hello" image="woop" />
+  <Layout>
+    <Header title="hello" image="woop" />
+  </Layout>
   // <p>hello</p>
   // <Layout>
   //   <h1>Hi people</h1>

@@ -40,6 +40,14 @@ module.exports = {
         accessToken: process.env.PRISMIC_TOKEN,
         lang: '*',
       }
+    },
+    {
+      resolve: 'gatsby-plugin-web-font-loader',
+      options: {
+        typekit: {
+          id: process.env.TYPEKIT_ID
+        }
+      }
     }
   ],
 }
