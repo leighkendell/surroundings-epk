@@ -2,14 +2,13 @@ import Img from 'gatsby-image';
 import React from 'react';
 
 interface Props {
-  title: string;
   image: any;
+  alt: string;
 }
 
-const Header = ({ title, image }: Props) => (
+const Header = ({ image, alt }: Props) => (
   <header role="banner">
-    <h1>{title}</h1>
-    <Img fluid={image} />
+    <Img fluid={image} alt={alt} />
   </header>
 );
 

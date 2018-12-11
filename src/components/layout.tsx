@@ -1,10 +1,9 @@
 import { graphql, StaticQuery } from 'gatsby';
-import React, { ReactNode } from 'react';
+import React from 'react';
 import Helmet from 'react-helmet';
-
-interface Props extends React.SFC {
-  children: ReactNode;
-}
+import { ThemeProvider } from 'styled-components';
+import { theme } from '../helpers/theme';
+import GlobalStyle from './global-style';
 
 const META_QUERY = graphql`
   query AllPrismicEpk {
@@ -17,7 +16,7 @@ const META_QUERY = graphql`
   }
 `;
 
-const Layout = ({ children }: Props) => (
+const Layout: React.SFC = ({ children }) => (
   <StaticQuery
     query={META_QUERY}
     render={data => {
@@ -28,7 +27,12 @@ const Layout = ({ children }: Props) => (
           <Helmet title={meta_title} meta={[{ name: 'description', content: meta_description }]}>
             <html lang="en" />
           </Helmet>
-          {children}
+          <ThemeProvider theme={theme}>
+            <>
+              <GlobalStyle />
+              {children}
+            </>
+          </ThemeProvider>
         </>
       );
     }}
