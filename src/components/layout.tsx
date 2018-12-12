@@ -1,7 +1,7 @@
 import { graphql, StaticQuery } from 'gatsby';
 import React from 'react';
 import Helmet from 'react-helmet';
-import { ThemeProvider } from 'styled-components';
+import { ThemeProvider } from '../helpers/styled-components';
 import { theme } from '../helpers/theme';
 import GlobalStyle from './global-style';
 

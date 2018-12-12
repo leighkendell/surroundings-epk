@@ -5,6 +5,9 @@ export interface ThemeInterface {
   colorBlack: string;
   colorBlue: string;
   colorYellow: string;
+  spacingSmall: string;
+  spacingMedium: string;
+  spacingLarge: string;
 }
 
 export const theme: ThemeInterface = {
@@ -14,4 +17,7 @@ export const theme: ThemeInterface = {
   colorBlack: '#000',
   colorBlue: '#2851dc',
   colorYellow: '#ffd642',
+  spacingSmall: '20px',
+  spacingMedium: '40px',
+  spacingLarge: '80px',
 };

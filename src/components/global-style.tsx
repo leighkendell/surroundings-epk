@@ -5,6 +5,7 @@ const GlobalStyle = createGlobalStyle`
   html {
     box-sizing: border-box;
     font-family: ${props => props.theme.fontFamily};
+    font-size: 16px;
     color: ${props => props.theme.colorBlack};
     line-height: 1.4;
   }

@@ -2,7 +2,7 @@ import Img from 'gatsby-image';
 import React from 'react';
 
 interface Props {
-  image: any;
+  image: object;
   alt: string;
 }
 
