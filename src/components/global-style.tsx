@@ -4,9 +4,9 @@ import { createGlobalStyle } from '../helpers/styled-components';
 const GlobalStyle = createGlobalStyle`
   html {
     box-sizing: border-box;
+    color: ${props => props.theme.colorBlack};
     font-family: ${props => props.theme.fontFamily};
     font-size: 16px;
-    color: ${props => props.theme.colorBlack};
     line-height: 1.4;
   }
 

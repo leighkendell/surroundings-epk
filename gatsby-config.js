@@ -48,6 +48,8 @@ module.exports = {
           id: process.env.TYPEKIT_ID
         }
       }
-    }
+    },
+    'gatsby-plugin-stylelint',
+    'gatsby-plugin-react-svg'
   ],
 }

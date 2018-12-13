@@ -1,8 +1,8 @@
-import Img from 'gatsby-image';
+import Img, { FluidObject } from 'gatsby-image';
 import React from 'react';
 
 interface Props {
-  image: object;
+  image: FluidObject;
   alt: string;
 }
 
