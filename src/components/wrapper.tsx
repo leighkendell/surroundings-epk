@@ -18,6 +18,12 @@ const Wrapper = styled.div<Props>`
   ${breakpoint.large`
     padding: ${props => props.theme.spacingLarge};
   `};
+
+  > * {
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
 `;
 
 export default Wrapper;

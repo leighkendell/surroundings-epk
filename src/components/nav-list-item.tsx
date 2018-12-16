@@ -14,7 +14,7 @@ class NavListItem extends React.Component<Props> {
     const targetEl = document.querySelector(`${target.hash}`);
 
     if (targetEl) {
-      targetEl.scrollIntoView({ behavior: 'smooth' });
+      targetEl.scrollIntoView({ block: 'start', behavior: 'smooth' });
     }
   }
 

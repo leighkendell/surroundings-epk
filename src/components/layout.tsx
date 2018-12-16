@@ -1,6 +1,8 @@
 import { graphql, StaticQuery } from 'gatsby';
 import React from 'react';
 import Helmet from 'react-helmet';
+import Nav from '../components/nav';
+import NavListItem from '../components/nav-list-item';
 import { ThemeProvider } from '../helpers/styled-components';
 import { theme } from '../helpers/theme';
 import GlobalStyle from './global-style';
@@ -31,7 +33,16 @@ const Layout: React.SFC = ({ children }) => (
           <ThemeProvider theme={theme}>
             <>
               <GlobalStyle />
-              <Store>{children}</Store>
+              <Store>
+                <Nav>
+                  <NavListItem target="releases">Releases</NavListItem>
+                  <NavListItem target="listen">Listen</NavListItem>
+                  <NavListItem target="videos">Videos</NavListItem>
+                  <NavListItem target="downloads">Downloads</NavListItem>
+                  <NavListItem target="contact">Contact</NavListItem>
+                </Nav>
+                {children}
+              </Store>
             </>
           </ThemeProvider>
         </>

@@ -5,6 +5,12 @@ export interface ThemeInterface {
   colorBlack: string;
   colorBlue: string;
   colorYellow: string;
+  section: {
+    primary: string;
+    secondary: string;
+    dark: string;
+    light: string;
+  };
   spacingSmall: string;
   spacingMedium: string;
   spacingLarge: string;
@@ -19,6 +25,20 @@ export const theme: ThemeInterface = {
   colorBlack: '#000',
   colorBlue: '#2851dc',
   colorYellow: '#ffd642',
+  section: {
+    get primary() {
+      return theme.colorBlue;
+    },
+    get secondary() {
+      return theme.colorGrey;
+    },
+    get dark() {
+      return theme.colorBlack;
+    },
+    get light() {
+      return theme.colorWhite;
+    },
+  },
   spacingSmall: '20px',
   spacingMedium: '40px',
   spacingLarge: '80px',
