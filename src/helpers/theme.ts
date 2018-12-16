@@ -8,6 +8,8 @@ export interface ThemeInterface {
   spacingSmall: string;
   spacingMedium: string;
   spacingLarge: string;
+  headerSmall: string;
+  headerLarge: string;
 }
 
 export const theme: ThemeInterface = {
@@ -20,4 +22,6 @@ export const theme: ThemeInterface = {
   spacingSmall: '20px',
   spacingMedium: '40px',
   spacingLarge: '80px',
+  headerSmall: '70px',
+  headerLarge: '100px',
 };

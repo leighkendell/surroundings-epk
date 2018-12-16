@@ -7,7 +7,7 @@ interface Props {
 
 const Wrapper = styled.div<Props>`
   width: 100%;
-  max-width: calc(${props => `${props.theme.spacingLarge} + ${props.small ? 800 : 1280}px`});
+  max-width: calc(${props => `(${props.theme.spacingLarge} * 2) + ${props.small ? 800 : 1280}px`});
   margin: 0 auto;
   padding: ${props => props.theme.spacingSmall};
 
