@@ -1,4 +1,5 @@
 import React, { ReactElement } from 'react';
+import { breakpoint } from '../helpers/style-utils';
 import styled from '../helpers/styled-components';
 import Logo from './logo';
 import NavList from './nav-list';
@@ -44,12 +45,19 @@ class Nav extends React.Component<Props, State> {
 }
 
 const StyledNav = styled(Nav)`
+  display: flex;
   position: sticky;
   z-index: 1;
   top: 0;
+  align-items: center;
   height: ${props => props.theme.headerSmall};
+  overflow: hidden;
   background-color: ${props => props.theme.colorWhite};
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+
+  ${breakpoint.medium`
+    height: ${props => props.theme.headerLarge};
+  `}
 `;
 
 export default StyledNav;

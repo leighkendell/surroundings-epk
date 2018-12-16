@@ -36,10 +36,17 @@ const StyledNavListItem = styled(NavListItem)`
 
   a {
     display: block;
+    position: relative;
     padding: ${props => props.theme.spacingSmall};
+    transition: 0.25s ease;
     color: currentColor;
     font-weight: bold;
     text-decoration: none;
+    cursor: pointer;
+
+    &:hover {
+      color: ${props => props.theme.colorBlue};
+    }
   }
 `;
 

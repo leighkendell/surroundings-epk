@@ -1,3 +1,4 @@
+import { breakpoint } from '../helpers/style-utils';
 import styled from '../helpers/styled-components';
 
 interface Props {
@@ -22,6 +23,18 @@ const NavList = styled.ul<Props>`
   transition: 0.35s ease-in-out;
   background-color: ${props => props.theme.colorWhite};
   text-align: center;
+
+  ${breakpoint.medium`
+    position: static;
+    visibility: visible;
+    flex-direction: row;
+    width: auto;
+    height: auto;
+    padding: 0;
+    transform: none;
+    transition: none;
+    z-index: 1;
+  `}
 `;
 
 export default NavList;

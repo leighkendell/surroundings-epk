@@ -1,3 +1,4 @@
+import { breakpoint } from '../helpers/style-utils';
 import styled from '../helpers/styled-components';
 
 interface Props {
@@ -15,6 +16,10 @@ const NavToggle = styled.button<Props>`
   background: none;
   appearance: none;
   ${props => props.open && `transform: rotate(1turn)`};
+
+  ${breakpoint.medium`
+    display: none;
+  `}
 
   &::before,
   &::after {
