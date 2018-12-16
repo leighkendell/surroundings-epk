@@ -4,6 +4,7 @@ import Helmet from 'react-helmet';
 import { ThemeProvider } from '../helpers/styled-components';
 import { theme } from '../helpers/theme';
 import GlobalStyle from './global-style';
+import Store from './store';
 
 const META_QUERY = graphql`
   query AllPrismicEpk {
@@ -30,7 +31,7 @@ const Layout: React.SFC = ({ children }) => (
           <ThemeProvider theme={theme}>
             <>
               <GlobalStyle />
-              {children}
+              <Store>{children}</Store>
             </>
           </ThemeProvider>
         </>

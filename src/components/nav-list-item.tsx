@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from '../helpers/styled-components';
+import { StoreContext } from './store';
 
 interface Props {
   target: string;
@@ -8,6 +9,7 @@ interface Props {
 
 class NavListItem extends React.Component<Props> {
   public scrollToTarget(event: React.MouseEvent) {
+    event.preventDefault();
     const target = event.target as HTMLAnchorElement;
     const targetEl = document.querySelector(`${target.hash}`);
 
@@ -20,11 +22,15 @@ class NavListItem extends React.Component<Props> {
     const { children, target, className } = this.props;
 
     return (
-      <li className={className}>
-        <a href={`#${target}`} onClick={this.scrollToTarget}>
-          {children}
-        </a>
-      </li>
+      <StoreContext.Consumer>
+        {context => (
+          <li className={className} onClick={context.toggleNavOpen} role="button">
+            <a href={`#${target}`} onClick={this.scrollToTarget}>
+              {children}
+            </a>
+          </li>
+        )}
+      </StoreContext.Consumer>
     );
   }
 }

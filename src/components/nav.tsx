@@ -5,44 +5,26 @@ import Logo from './logo';
 import NavList from './nav-list';
 import NavToggle from './nav-toggle';
 import NavWrapper from './nav-wrapper';
+import { StoreContext } from './store';
 
 interface Props {
   className?: string;
   children?: Array<ReactElement<any>>;
 }
 
-interface State {
-  open: boolean;
-}
-
-class Nav extends React.Component<Props, State> {
-  public state = {
-    open: false,
-  };
-
-  public render() {
-    const { children, className } = this.props;
-    const { open } = this.state;
-
-    return (
-      <nav role="navigation" className={className}>
+const Nav = ({ children, className }: Props) => (
+  <nav role="navigation" className={className}>
+    <StoreContext.Consumer>
+      {context => (
         <NavWrapper>
           <Logo />
-          <NavToggle role="button" onClick={this.toggleOpen} open={open} />
-          <NavList open={open}>{children}</NavList>
+          <NavToggle role="button" onClick={context.toggleNavOpen} open={context.state.navOpen} />
+          <NavList open={context.state.navOpen}>{children}</NavList>
         </NavWrapper>
-      </nav>
-    );
-  }
-
-  private toggleOpen = () => {
-    const { open } = this.state;
-
-    this.setState({
-      open: !open,
-    });
-  };
-}
+      )}
+    </StoreContext.Consumer>
+  </nav>
+);
 
 const StyledNav = styled(Nav)`
   display: flex;
