@@ -10,7 +10,7 @@ const NavList = styled.ul<Props>`
   visibility: ${props => (props.open ? 'visible' : 'hidden')};
   position: fixed;
   z-index: -1;
-  top: ${props => props.theme.headerSmall};
+  top: 100%;
   left: 0;
   flex-direction: column;
   align-items: center;
@@ -19,7 +19,7 @@ const NavList = styled.ul<Props>`
   height: calc(100vh - ${props => props.theme.headerSmall});
   margin: 0;
   padding: ${props => props.theme.spacingSmall};
-  transform: ${props => (props.open ? 'translateY(0)' : 'translateY(100%)')};
+  transform: ${props => (props.open ? 'translateY(-100%)' : 'translateY(0)')};
   transition: 0.35s ease-in-out;
   background-color: ${props => props.theme.colorWhite};
   text-align: center;
