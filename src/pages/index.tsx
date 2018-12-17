@@ -4,6 +4,7 @@ import Header from '../components/header';
 import Layout from '../components/layout';
 import Section from '../components/section';
 import Wrapper from '../components/wrapper';
+import { Release } from '../types/gatsby-types';
 
 const CONTENT_QUERY = graphql`
   query PrismicEpk {
@@ -27,6 +28,12 @@ const CONTENT_QUERY = graphql`
             text
           }
         }
+        releases {
+          release_name {
+            text
+          }
+          release_year
+        }
       }
     }
   }
@@ -37,11 +44,13 @@ const IndexPage = () => (
     <StaticQuery
       query={CONTENT_QUERY}
       render={data => {
-        const { hero_image, title, biography } = data.prismicEpk.data;
+        const { hero_image, title, biography, releases } = data.prismicEpk.data;
+        const sortedReleases = releases.sort((a: Release, b: Release) => b.release_year - a.release_year);
 
         return (
           <>
             <Header image={hero_image.localFile.childImageSharp.fluid} alt={hero_image.alt} />
+
             <Section variation="primary">
               <Wrapper small={true}>
                 {/* <h1>{title.text}</h1> */}
@@ -50,9 +59,13 @@ const IndexPage = () => (
                 ))}
               </Wrapper>
             </Section>
+
             <Section id="releases" variation="secondary">
               <Wrapper>
                 <h2>Releases</h2>
+                {sortedReleases.map((release: Release) => (
+                  <p>{release.release_name.text}</p>
+                ))}
               </Wrapper>
             </Section>
           </>
