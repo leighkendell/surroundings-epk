@@ -63,8 +63,8 @@ const IndexPage = () => (
             <Section id="releases" variation="secondary">
               <Wrapper>
                 <h2>Releases</h2>
-                {sortedReleases.map((release: Release) => (
-                  <p>{release.release_name.text}</p>
+                {sortedReleases.map(({ release_name, release_year }: Release) => (
+                  <p>{release_name.text}</p>
                 ))}
               </Wrapper>
             </Section>
