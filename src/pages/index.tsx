@@ -2,6 +2,7 @@ import { graphql, StaticQuery } from 'gatsby';
 import React from 'react';
 import Header from '../components/header';
 import Layout from '../components/layout';
+import ReleaseItem from '../components/release-item';
 import Section from '../components/section';
 import Wrapper from '../components/wrapper';
 import { Release } from '../types/gatsby-types';
@@ -33,6 +34,16 @@ const CONTENT_QUERY = graphql`
             text
           }
           release_year
+          release_image {
+            alt
+            localFile {
+              childImageSharp {
+                fluid(maxWidth: 800, quality: 90) {
+                  ...GatsbyImageSharpFluid_withWebp
+                }
+              }
+            }
+          }
         }
       }
     }
@@ -63,8 +74,8 @@ const IndexPage = () => (
             <Section id="releases" variation="secondary">
               <Wrapper>
                 <h2>Releases</h2>
-                {sortedReleases.map(({ release_name, release_year }: Release) => (
-                  <p>{release_name.text}</p>
+                {sortedReleases.map(({ release_name, release_year, release_image }: Release) => (
+                  <ReleaseItem name={release_name.text} year={release_year} image={release_image} />
                 ))}
               </Wrapper>
             </Section>
