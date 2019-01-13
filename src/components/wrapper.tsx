@@ -20,7 +20,7 @@ const Wrapper = styled.div<Props>`
   `};
 
   > * {
-    &:last-of-type {
+    &:last-child {
       margin-bottom: 0;
     }
   }

@@ -1,5 +1,9 @@
 export interface ThemeInterface {
   fontFamily: string;
+  fontSizeDefault: string;
+  fontSizeMedium: string;
+  fontSizeLarge: string;
+  fontSizeXLarge: string;
   colorWhite: string;
   colorGrey: string;
   colorBlack: string;
@@ -20,6 +24,10 @@ export interface ThemeInterface {
 
 export const theme: ThemeInterface = {
   fontFamily: `'Proxima Nova', serif`,
+  fontSizeDefault: '1rem',
+  fontSizeMedium: '1.5rem',
+  fontSizeLarge: '3.375rem',
+  fontSizeXLarge: '5rem',
   colorWhite: '#fff',
   colorGrey: '#f1f1f1',
   colorBlack: '#000',
