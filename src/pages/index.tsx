@@ -6,6 +6,7 @@ import Layout from '../components/layout';
 import ReleaseItem from '../components/release-item';
 import Section from '../components/section';
 import SectionTitle from '../components/section-title';
+import SpotifyPlayer from '../components/spotify-player';
 import Wrapper from '../components/wrapper';
 import { Release } from '../types/gatsby-types';
 
@@ -13,6 +14,7 @@ const CONTENT_QUERY = graphql`
   query PrismicEpk {
     prismicEpk {
       data {
+        spotify_id
         hero_image {
           alt
           localFile {
@@ -57,7 +59,7 @@ const IndexPage = () => (
     <StaticQuery
       query={CONTENT_QUERY}
       render={data => {
-        const { hero_image, title, biography, releases } = data.prismicEpk.data;
+        const { hero_image, title, biography, releases, spotify_id } = data.prismicEpk.data;
         const sortedReleases = releases.sort((a: Release, b: Release) => b.release_year - a.release_year);
 
         return (
@@ -81,6 +83,13 @@ const IndexPage = () => (
                     <ReleaseItem name={release_name.text} year={release_year} image={release_image} />
                   ))}
                 </Grid>
+              </Wrapper>
+            </Section>
+
+            <Section id="listen" variation="light">
+              <Wrapper small={true}>
+                <SectionTitle>Listen</SectionTitle>
+                <SpotifyPlayer playlistID={spotify_id} />
               </Wrapper>
             </Section>
           </>
