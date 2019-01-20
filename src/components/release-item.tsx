@@ -1,4 +1,4 @@
-import Img, { FluidObject } from 'gatsby-image';
+import Img from 'gatsby-image';
 import React from 'react';
 import styled from '../helpers/styled-components';
 import { Release } from '../types/gatsby-types';
@@ -9,12 +9,22 @@ interface Props {
   year: number;
 }
 
+const ReleaseItemWrapper = styled.div`
+  h3 {
+    margin: 0;
+  }
+
+  .gatsby-image-wrapper {
+    margin-bottom: ${props => props.theme.spacingSmall};
+  }
+`;
+
 const ReleaseItem = ({ image, name, year }: Props) => (
-  <div>
+  <ReleaseItemWrapper>
     <Img fluid={image.localFile.childImageSharp.fluid} alt={image.alt} />
     <h3>{name}</h3>
     <span>{year}</span>
-  </div>
+  </ReleaseItemWrapper>
 );
 
 export default ReleaseItem;

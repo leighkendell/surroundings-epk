@@ -41,7 +41,7 @@ const Layout: React.SFC = ({ children }) => (
                   <NavListItem target="downloads">Downloads</NavListItem>
                   <NavListItem target="contact">Contact</NavListItem>
                 </Nav>
-                {children}
+                <main>{children}</main>
               </Store>
             </>
           </ThemeProvider>

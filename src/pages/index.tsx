@@ -1,5 +1,6 @@
 import { graphql, StaticQuery } from 'gatsby';
 import React from 'react';
+import Grid from '../components/grid';
 import Header from '../components/header';
 import Layout from '../components/layout';
 import ReleaseItem from '../components/release-item';
@@ -74,9 +75,11 @@ const IndexPage = () => (
             <Section id="releases" variation="secondary">
               <Wrapper>
                 <h2>Releases</h2>
-                {sortedReleases.map(({ release_name, release_year, release_image }: Release) => (
-                  <ReleaseItem name={release_name.text} year={release_year} image={release_image} />
-                ))}
+                <Grid>
+                  {sortedReleases.map(({ release_name, release_year, release_image }: Release) => (
+                    <ReleaseItem name={release_name.text} year={release_year} image={release_image} />
+                  ))}
+                </Grid>
               </Wrapper>
             </Section>
           </>

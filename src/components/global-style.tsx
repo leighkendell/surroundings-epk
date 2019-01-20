@@ -8,6 +8,9 @@ const GlobalStyle = createGlobalStyle`
     color: ${props => props.theme.colorBlack};
     font-family: ${props => props.theme.fontFamily};
     font-size: 16px;
+  }
+
+  body {
     line-height: 1.4;
   }
 
