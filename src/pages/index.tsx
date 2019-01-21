@@ -75,8 +75,8 @@ const IndexPage = () => (
               </Wrapper>
             </Section>
 
-            <Section id="releases" variation="secondary">
-              <Wrapper>
+            <Section id="releases" variation="light">
+              <Wrapper collapseBottom={true}>
                 <SectionTitle>Releases</SectionTitle>
                 <Grid>
                   {sortedReleases.map(({ release_name, release_year, release_image }: Release) => (
@@ -86,7 +86,7 @@ const IndexPage = () => (
               </Wrapper>
             </Section>
 
-            <Section id="listen" variation="light">
+            <Section id="listen" variation="secondary" angled={true}>
               <Wrapper small={true}>
                 <SectionTitle>Listen</SectionTitle>
                 <SpotifyPlayer playlistID={spotify_id} />

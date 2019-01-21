@@ -3,6 +3,7 @@ import styled from '../helpers/styled-components';
 
 interface Props {
   small?: boolean;
+  collapseBottom?: boolean;
 }
 
 const Wrapper = styled.div<Props>`
@@ -18,6 +19,10 @@ const Wrapper = styled.div<Props>`
   ${breakpoint.large`
     padding: ${props => props.theme.spacingLarge};
   `};
+
+  & {
+    ${props => props.collapseBottom && `padding-bottom: 0;`}
+  }
 
   > * {
     &:last-child {
