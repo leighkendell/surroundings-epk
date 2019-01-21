@@ -9,8 +9,7 @@ const SpotifyPlayer: React.SFC<Props> = ({ playlistID }) => (
     src={`https://open.spotify.com/embed/playlist/${playlistID}`}
     width="100%"
     height="380"
-    frameborder="0"
-    allowtransparency="true"
+    frameBorder="0"
     allow="encrypted-media"
   />
 );

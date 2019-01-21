@@ -8,6 +8,7 @@ import Section from '../components/section';
 import SectionTitle from '../components/section-title';
 import SpotifyPlayer from '../components/spotify-player';
 import Wrapper from '../components/wrapper';
+import { sortByYear } from '../helpers/utils';
 import { Release } from '../types/gatsby-types';
 
 const CONTENT_QUERY = graphql`
@@ -49,6 +50,12 @@ const CONTENT_QUERY = graphql`
             }
           }
         }
+        videos {
+          video_name {
+            text
+          }
+          video_year
+        }
       }
     }
   }
@@ -59,8 +66,9 @@ const IndexPage = () => (
     <StaticQuery
       query={CONTENT_QUERY}
       render={data => {
-        const { hero_image, title, biography, releases, spotify_id } = data.prismicEpk.data;
-        const sortedReleases = releases.sort((a: Release, b: Release) => b.release_year - a.release_year);
+        const { hero_image, title, biography, releases, videos, spotify_id } = data.prismicEpk.data;
+        const sortedReleases = sortByYear(releases, 'release_year');
+        const sortedVideos = sortByYear(videos, 'video_year');
 
         return (
           <>
@@ -80,7 +88,12 @@ const IndexPage = () => (
                 <SectionTitle>Releases</SectionTitle>
                 <Grid>
                   {sortedReleases.map(({ release_name, release_year, release_image }: Release) => (
-                    <ReleaseItem name={release_name.text} year={release_year} image={release_image} />
+                    <ReleaseItem
+                      name={release_name.text}
+                      year={release_year}
+                      image={release_image}
+                      key={release_name.text}
+                    />
                   ))}
                 </Grid>
               </Wrapper>
@@ -90,6 +103,13 @@ const IndexPage = () => (
               <Wrapper small={true}>
                 <SectionTitle>Listen</SectionTitle>
                 <SpotifyPlayer playlistID={spotify_id} />
+              </Wrapper>
+            </Section>
+
+            <Section id="videos" variation="light">
+              <Wrapper>
+                <SectionTitle>Videos</SectionTitle>
+                {sortedVideos.map(item => item.video_name.text)}
               </Wrapper>
             </Section>
           </>

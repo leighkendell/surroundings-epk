@@ -7,7 +7,7 @@ const SectionTitle = styled.h2`
   max-width: 800px;
   margin: 0 auto var(--margin);
 
-  ${breakpoint.small`
+  ${breakpoint.medium`
     --margin: ${props => props.theme.spacingMedium};
   `}
 `;

@@ -7,7 +7,7 @@ const Grid = styled.div`
   display: grid;
   grid-gap: var(--gap);
 
-  ${breakpoint.small`
+  ${breakpoint.medium`
     --gap: ${props => props.theme.spacingMedium};
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   `}

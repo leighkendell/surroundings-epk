@@ -20,7 +20,7 @@ interface Breakpoints {
 const sizes: Sizes = {
   xlarge: 1170,
   large: 1000,
-  medium: 768,
+  medium: 700,
   small: 375,
 };
 
