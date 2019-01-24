@@ -1,8 +1,10 @@
-import 'normalize.css';
+import styledNormalize from 'styled-normalize';
 import { breakpoint } from '../helpers/style-utils';
 import { createGlobalStyle } from '../helpers/styled-components';
 
 const GlobalStyle = createGlobalStyle`
+  ${styledNormalize}
+
   html {
     box-sizing: border-box;
     color: ${props => props.theme.colorBlack};
@@ -33,6 +35,7 @@ const GlobalStyle = createGlobalStyle`
   h3 {
     margin: 0 0 1rem;
     font-weight: bold;
+    line-height: 1.2;
   }
 
   h1,

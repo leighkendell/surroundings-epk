@@ -29,7 +29,7 @@ const Nav = ({ children, className }: Props) => (
 const StyledNav = styled(Nav)`
   display: flex;
   position: sticky;
-  z-index: 1;
+  z-index: 2;
   top: 0;
   align-items: center;
   height: ${props => props.theme.headerSmall};

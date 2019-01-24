@@ -26,7 +26,6 @@ const Biography = () => (
       return (
         <Section variation="primary">
           <Wrapper small={true}>
-            {/* <h1>{title.text}</h1> */}
             {biography.raw.map((paragraph: { text: string }, index: number) => (
               <p key={index}>{paragraph.text}</p>
             ))}

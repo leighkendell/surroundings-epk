@@ -2,12 +2,12 @@ import { graphql, StaticQuery } from 'gatsby';
 import React from 'react';
 import Biography from '../components/biography';
 import Hero from '../components/hero';
+import HeroTitle from '../components/hero-title';
 import Layout from '../components/layout';
 import Listen from '../components/listen';
 import Releases from '../components/releases';
 import Section from '../components/section';
 import SectionTitle from '../components/section-title';
-import SpotifyPlayer from '../components/spotify-player';
 import Wrapper from '../components/wrapper';
 import { sortByYear } from '../helpers/utils';
 
@@ -40,6 +40,7 @@ const IndexPage = () => (
         return (
           <>
             <Hero />
+            <HeroTitle>{title.text}</HeroTitle>
             <Biography />
             <Releases />
             <Listen />
