@@ -24,3 +24,13 @@ export interface Video {
   video_year: number;
   video_image: Image
 }
+
+export interface Download {
+  download_name: string;
+  download_file: {
+    size: string;
+    kind: string;
+    url: string;
+  }
+  download_image: Image;
+}

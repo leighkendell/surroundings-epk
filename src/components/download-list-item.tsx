@@ -11,6 +11,7 @@ interface Props {
   type: string;
   url: string;
   image: FluidObject;
+  imageAlt: string;
   className?: string;
 }
 
@@ -19,7 +20,7 @@ const DownloadListItemContent = styled.a`
   position: relative;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
+  width: calc(100% - 80px);
   padding: ${props => props.theme.spacingSmall};
   color: currentColor;
   text-decoration: none;
@@ -51,10 +52,10 @@ const DownloadListItemText = styled.span`
   white-space: nowrap;
 `;
 
-const DownloadListItem: React.SFC<Props> = ({ name, size, type, url, image, className }) => (
+const DownloadListItem: React.SFC<Props> = ({ name, size, type, url, image, imageAlt, className }) => (
   <li className={className}>
-    <Img fluid={image} />
-    <DownloadListItemContent href={url}>
+    <Img fluid={image} alt={imageAlt} />
+    <DownloadListItemContent href={url} target="_blank" rel="noopener noreferrer">
       <DownloadListItemText>
         <strong>{name}</strong> ({byteToMb(size)}MB {type})
       </DownloadListItemText>
@@ -67,6 +68,7 @@ const StyledDownloadListItem = styled(DownloadListItem)`
   display: flex;
   align-items: center;
   height: 5em;
+  overflow: hidden;
   transition: 0.25s ease;
   background-color: ${props => props.theme.colorWhite};
   box-shadow: rgba(0, 0, 0, 0.1) 0 0 20px;

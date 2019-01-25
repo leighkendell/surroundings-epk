@@ -1,7 +1,9 @@
 import { graphql, StaticQuery } from 'gatsby';
 import React from 'react';
 import Biography from '../components/biography';
+import Contact from '../components/contact';
 import Downloads from '../components/downloads';
+import Footer from '../components/footer';
 import Hero from '../components/hero';
 import HeroTitle from '../components/hero-title';
 import Layout from '../components/layout';
@@ -37,6 +39,8 @@ const IndexPage = () => (
             <Listen />
             <Videos />
             <Downloads />
+            <Contact />
+            <Footer />
           </>
         );
       }}

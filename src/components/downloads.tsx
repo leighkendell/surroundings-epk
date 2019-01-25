@@ -1,5 +1,6 @@
 import { graphql, StaticQuery } from 'gatsby';
 import React from 'react';
+import { Download } from '../types/gatsby-types';
 import DownloadList from './download-list';
 import DownloadListItem from './download-list-item';
 import Section from './section';
@@ -38,7 +39,7 @@ const Downloads = () => (
   <StaticQuery
     query={downloadsQuery}
     render={data => {
-      const { downloads } = data.prismicEpk.data;
+      const downloads: Download[] = data.prismicEpk.data.downloads;
 
       return (
         <Section id="downloads" variation="secondary">
@@ -52,6 +53,7 @@ const Downloads = () => (
                   type={download.download_file.kind}
                   url={download.download_file.url}
                   image={download.download_image.localFile.childImageSharp.fluid}
+                  imageAlt={download.download_image.alt}
                   key={download.download_name}
                 />
               ))}

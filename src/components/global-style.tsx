@@ -72,6 +72,10 @@ const GlobalStyle = createGlobalStyle`
   p {
     margin: 0 0 1rem;
   }
+
+  a {
+    color: currentColor;
+  }
 `;
 
 export default GlobalStyle;
