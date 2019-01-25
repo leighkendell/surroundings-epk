@@ -6,10 +6,7 @@ import HeroTitle from '../components/hero-title';
 import Layout from '../components/layout';
 import Listen from '../components/listen';
 import Releases from '../components/releases';
-import Section from '../components/section';
-import SectionTitle from '../components/section-title';
-import Wrapper from '../components/wrapper';
-import { sortByYear } from '../helpers/utils';
+import Videos from '../components/videos';
 
 const CONTENT_QUERY = graphql`
   query PrismicEpk {
@@ -17,12 +14,6 @@ const CONTENT_QUERY = graphql`
       data {
         title {
           text
-        }
-        videos {
-          video_name {
-            text
-          }
-          video_year
         }
       }
     }
@@ -34,8 +25,7 @@ const IndexPage = () => (
     <StaticQuery
       query={CONTENT_QUERY}
       render={data => {
-        const { title, videos } = data.prismicEpk.data;
-        const sortedVideos = sortByYear(videos, 'video_year');
+        const { title } = data.prismicEpk.data;
 
         return (
           <>
@@ -44,13 +34,7 @@ const IndexPage = () => (
             <Biography />
             <Releases />
             <Listen />
-
-            <Section id="videos" variation="light">
-              <Wrapper>
-                <SectionTitle>Videos</SectionTitle>
-                {sortedVideos.map(item => item.video_name.text)}
-              </Wrapper>
-            </Section>
+            <Videos />
           </>
         );
       }}

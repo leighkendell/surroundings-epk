@@ -1,10 +1,10 @@
 import Img from 'gatsby-image';
 import React from 'react';
 import styled from '../helpers/styled-components';
-import { Release } from '../types/gatsby-types';
+import { Image } from '../types/gatsby-types';
 
 interface Props {
-  image: Release['release_image'];
+  image: Image;
   name: string;
   year: number;
 }

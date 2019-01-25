@@ -1,7 +1,11 @@
 import { breakpoint } from '../helpers/style-utils';
 import styled from '../helpers/styled-components';
 
-const Grid = styled.div`
+interface Props {
+  minWidth?: number;
+}
+
+const Grid = styled.div<Props>`
   --gap: ${props => props.theme.spacingSmall};
 
   display: grid;
@@ -9,8 +13,12 @@ const Grid = styled.div`
 
   ${breakpoint.medium`
     --gap: ${props => props.theme.spacingMedium};
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(${props => props.minWidth}px, 1fr));
   `}
 `;
+
+Grid.defaultProps = {
+  minWidth: 300,
+};
 
 export default Grid;
