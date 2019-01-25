@@ -23,7 +23,7 @@ export interface ThemeInterface {
 }
 
 export const theme: ThemeInterface = {
-  fontFamily: `'Proxima Nova', sans-serif`,
+  fontFamily: `proxima-nova, sans-serif`,
   fontSizeDefault: '1rem',
   fontSizeMedium: '1.5rem',
   fontSizeLarge: '3.375rem',
