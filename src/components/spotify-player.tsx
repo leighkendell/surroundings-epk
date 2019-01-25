@@ -14,6 +14,7 @@ const SpotifyPlayer: React.SFC<Props> = ({ playlistID, className }) => (
     frameBorder="0"
     allow="encrypted-media"
     className={className}
+    title="Spotify Player"
   />
 );
 

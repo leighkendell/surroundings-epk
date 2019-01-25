@@ -5,7 +5,9 @@ interface Props {
   open?: boolean;
 }
 
-const NavToggle = styled.button<Props>`
+const NavToggle = styled.button.attrs(({ open }: Props) => ({
+  'aria-label': open ? 'Close menu' : 'Open menu',
+}))<Props>`
   position: relative;
   width: 30px;
   height: 30px;
