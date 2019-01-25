@@ -23,6 +23,9 @@ export interface Video {
   }
   video_year: number;
   video_image: Image
+  video_link: {
+    url: string;
+  }
 }
 
 export interface Download {

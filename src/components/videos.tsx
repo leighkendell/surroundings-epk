@@ -27,6 +27,9 @@ const videosQuery = graphql`
               }
             }
           }
+          video_link {
+            url
+          }
         }
       }
     }
@@ -44,8 +47,14 @@ const Videos = () => (
           <Wrapper>
             <SectionTitle>Videos</SectionTitle>
             <Grid minWidth={450}>
-              {videos.map(({ video_name, video_year, video_image }) => (
-                <ReleaseItem name={video_name.text} year={video_year} image={video_image} key={video_name.text} />
+              {videos.map(({ video_name, video_year, video_image, video_link }) => (
+                <ReleaseItem
+                  name={video_name.text}
+                  year={video_year}
+                  image={video_image}
+                  link={video_link.url}
+                  key={video_name.text}
+                />
               ))}
             </Grid>
           </Wrapper>
