@@ -38,7 +38,9 @@ const ReleaseItemWrapper = styled.div`
 
 const ReleaseItem = ({ image, name, year, link }: Props) => (
   <ReleaseItemWrapper>
+    {/* tslint:disable:react-a11y-anchors */}
     {link && <a href={link} target="_blank" rel="noopener noreferrer" aria-label="Watch on YouTube" />}
+    {/* tslint:enable */}
     <Img fluid={image.localFile.childImageSharp.fluid} alt={image.alt} />
     <h3>{name}</h3>
     <span>{year}</span>

@@ -18,7 +18,6 @@ class Nav extends React.Component<Props> {
   public navEl = React.createRef<HTMLDivElement>();
 
   public componentDidMount() {
-    // this.context.setNavHeight(200);
     this.observeHeight();
   }
 

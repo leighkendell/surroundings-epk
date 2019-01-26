@@ -1,5 +1,4 @@
 import React from 'react';
-import SmoothScroll from 'smooth-scroll';
 import styled from '../helpers/styled-components';
 import { StoreContext } from './store';
 
@@ -10,16 +9,22 @@ interface Props {
 
 class NavListItem extends React.Component<Props> {
   public static contextType = StoreContext;
+  public SmoothScroll: any;
+
+  public componentDidMount() {
+    this.SmoothScroll = require('smooth-scroll');
+  }
 
   public scrollToTarget = (event: React.MouseEvent) => {
     event.preventDefault();
     const target = event.target as HTMLAnchorElement;
     const targetEl = document.querySelector(`${target.hash}`);
-    const scroll = new SmoothScroll();
+    const scroll: SmoothScroll = new this.SmoothScroll();
     const { navHeight } = this.context.state;
     const scrollOptions: SmoothScroll.Options = {
       updateURL: false,
       offset: () => navHeight,
+      clip: false,
     };
 
     if (targetEl) {

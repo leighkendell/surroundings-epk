@@ -22,6 +22,7 @@ const SocialIconsWrapper = styled.div`
 
 const SocialIcons: React.SFC = () => (
   <SocialIconsWrapper>
+    {/* tslint:disable:react-a11y-anchors */}
     <a href="https://www.facebook.com/surroundingsau" aria-label="Facebook">
       <Facebook />
     </a>
@@ -31,6 +32,7 @@ const SocialIcons: React.SFC = () => (
     <a href="https://twitter.com/surroundingsau" aria-label="Twitter">
       <Twitter />
     </a>
+    {/* tslint:enable */}
   </SocialIconsWrapper>
 );
 
