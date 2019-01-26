@@ -75,6 +75,9 @@ const GlobalStyle = createGlobalStyle`
 
   a {
     color: currentColor;
+    font-weight: bold;
+    text-decoration: ${props => props.theme.colorYellow} underline;
+    text-decoration-skip: ink;
   }
 `;
 

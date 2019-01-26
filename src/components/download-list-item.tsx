@@ -49,6 +49,7 @@ const DownloadIcon = styled(download)`
 
 const DownloadListItemText = styled.span`
   overflow: hidden;
+  font-weight: normal;
   text-overflow: ellipsis;
   white-space: nowrap;
 `;
