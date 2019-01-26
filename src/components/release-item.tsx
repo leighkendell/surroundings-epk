@@ -1,6 +1,7 @@
 import Img from 'gatsby-image';
 import React from 'react';
 import styled from '../helpers/styled-components';
+import { theme } from '../helpers/theme';
 import { Image } from '../types/gatsby-types';
 
 interface Props {
@@ -41,7 +42,7 @@ const ReleaseItem = ({ image, name, year, link }: Props) => (
     {/* tslint:disable:react-a11y-anchors */}
     {link && <a href={link} target="_blank" rel="noopener noreferrer" aria-label="Watch on YouTube" />}
     {/* tslint:enable */}
-    <Img fluid={image.localFile.childImageSharp.fluid} alt={image.alt} />
+    <Img fluid={image.localFile.childImageSharp.fluid} alt={image.alt} backgroundColor={theme.colorGrey} />
     <h3>{name}</h3>
     <span>{year}</span>
   </ReleaseItemWrapper>

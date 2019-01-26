@@ -2,6 +2,7 @@ import Img, { FluidObject } from 'gatsby-image';
 import React from 'react';
 import { breakpoint } from '../helpers/style-utils';
 import styled from '../helpers/styled-components';
+import { theme } from '../helpers/theme';
 import { byteToMb } from '../helpers/utils';
 import download from '../images/download.svg';
 
@@ -54,7 +55,7 @@ const DownloadListItemText = styled.span`
 
 const DownloadListItem: React.SFC<Props> = ({ name, size, type, url, image, imageAlt, className }) => (
   <li className={className}>
-    <Img fluid={image} alt={imageAlt} />
+    <Img fluid={image} alt={imageAlt} backgroundColor={theme.colorGrey} />
     <DownloadListItemContent href={url} target="_blank" rel="noopener noreferrer">
       <DownloadListItemText>
         <strong>{name}</strong> ({byteToMb(size)}MB {type})
