@@ -5,6 +5,7 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "@types/react-helmet": "^5.0.8",
+    "@types/smooth-scroll": "^14.2.0",
     "@types/styled-components": "^4.1.6",
     "babel-plugin-styled-components": "^1.10.0",
     "gatsby": "^2.0.98",
@@ -23,6 +24,8 @@
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-helmet": "^5.2.0",
+    "resize-observer-polyfill": "^1.5.1",
+    "smooth-scroll": "^15.0.0",
     "styled-components": "^4.1.3",
     "styled-normalize": "^8.0.4"
   },

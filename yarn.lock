@@ -848,6 +848,11 @@
     "@types/prop-types" "*"
     csstype "^2.2.0"
 
+"@types/smooth-scroll@^14.2.0":
+  version "14.2.0"
+  resolved "https://registry.yarnpkg.com/@types/smooth-scroll/-/smooth-scroll-14.2.0.tgz#f42fe2b1f542df7fbb411405b1afbeb641a5f68e"
+  integrity sha512-E3ey+6xKnlYT7PGOkz1Jpsx9H0Mj6EX+yYNw7Ib5L4A5fBJkQWtf8byqmROVvmkmLPPXlALgwa7neR9FYeDWXw==
+
 "@types/styled-components@^4.1.6":
   version "4.1.6"
   resolved "https://registry.yarnpkg.com/@types/styled-components/-/styled-components-4.1.6.tgz#9aa1d47dbc6bae540083869bcc6c639c6e9af0fe"
@@ -10236,6 +10241,11 @@ requires-port@^1.0.0:
   resolved "https://registry.yarnpkg.com/requires-port/-/requires-port-1.0.0.tgz#925d2601d39ac485e091cf0da5c6e694dc3dcaff"
   integrity sha1-kl0mAdOaxIXgkc8NpcbmlNw9yv8=
 
+resize-observer-polyfill@^1.5.1:
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/resize-observer-polyfill/-/resize-observer-polyfill-1.5.1.tgz#0e9020dd3d21024458d4ebd27e23e40269810464"
+  integrity sha512-LwZrotdHOo12nQuZlHEmtuXdqGoOD0OhaxopaNFxWzInpEgaLWoVuAMbTzixuosCx2nEG58ngzW3vxdWoxIgdg==
+
 resolve-cwd@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/resolve-cwd/-/resolve-cwd-2.0.0.tgz#00a9f7387556e27038eae232caa372a6a59b665a"
@@ -10656,6 +10666,11 @@ slice-ansi@2.0.0:
     ansi-styles "^3.2.0"
     astral-regex "^1.0.0"
     is-fullwidth-code-point "^2.0.0"
+
+smooth-scroll@^15.0.0:
+  version "15.0.0"
+  resolved "https://registry.yarnpkg.com/smooth-scroll/-/smooth-scroll-15.0.0.tgz#be4f9cb2cc4952d80db6736e5656ed5849305272"
+  integrity sha512-hG0AUxgIea+wduxNArBKH0FpHCqK61+QhcnymF9iHafdBFupD/D1tc2QdLjddXBov4fZe6+iZqteoyyvmpZ0TA==
 
 snapdragon-node@^2.0.1:
   version "2.1.1"
