@@ -68,7 +68,6 @@ const StyledNav = styled(Nav)`
   top: 0;
   align-items: center;
   height: ${props => props.theme.headerSmall};
-  overflow: hidden;
   background-color: ${props => props.theme.colorWhite};
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 
